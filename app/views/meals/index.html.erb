@@ -6,7 +6,7 @@
         <% @meals.each do |meal| %>
           <%# <%= link_to meal_path(meal.id) do %>
             <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <%= cl_image_tag(meal.photo.key) %>
               <div class="card-product-infos">
                 <div>
                   <h2><%= meal.title %><h2>
@@ -14,7 +14,7 @@
                   <p><%= meal.description %></p>
                 </div>
                 <h2 class="card-product-pricing">£99.99</h2>
-                <%= cl_image_tag(meal.user.photo.key, height: 300, width: 400, crop: :fill) %>
+                <%= cl_image_tag(meal.user.photo.key, class: 'card-product-user avatar-bordered') %>
               </div>
             </div>
           <%# <% end %>
