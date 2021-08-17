@@ -6,14 +6,14 @@
   <div class="meal-card">
     <div class="card-trip">
      <% @meals.each do |meal| %>
-      <img src="#" />
+      <%= cl_image_tag(meal.photo.key) %>
       <div class="card-trip-infos">
         <div>
           <h2><%= meal.title %></h2>
           <p><%= meal.category %></p>
         </div>
         <h2 class="card-trip-pricing"><%= meal.price %></h2>
-        <img src="#" class="card-trip-user avatar-bordered" />
+        <%= cl_image_tag(meal.user.photo.key, :class=>'card-trip-user avatar-bordered') %>
       </div>
     <% end %>
     </div>
