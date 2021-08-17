@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <h1>Welcome to Meal</h1>
+  <p>Find a chef near your place</p>>
+
+  <div class="meal-card">
+    <div class="card-trip">
+     <% @meals.each do |meal| %>
+      <img src="#" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= meal.title %></h2>
+          <p><%= meal.category %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= meal.price %></h2>
+        <img src="#" class="card-trip-user avatar-bordered" />
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
