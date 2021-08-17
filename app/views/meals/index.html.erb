@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+    <div class="cards col-10">
+      <div class="cards">
+        <% @meals.each do |meal| %>
+          <%# <%= link_to meal_path(meal.id) do %>
+            <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <div>
+                  <h2><%= meal.title %><h2>
+                  <%# <h4><%= meal.user.nickname<h4> %>
+                  <p><%= meal.description %></p>
+                </div>
+                <h2 class="card-product-pricing">£99.99</h2>
+                <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="card-product-user avatar-bordered" />
+              </div>
+            </div>
+          <%# <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-2">
+
+
+    </div>
+  </div>
+</div>
