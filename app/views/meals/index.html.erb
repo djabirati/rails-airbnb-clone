@@ -8,7 +8,7 @@
               <%= cl_image_tag(meal.photo.key) %>
               <div class="card-product-infos">
                 <div>
-                  <h2><%= meal.title %><h2>
+                  <h2><%= link_to meal.title, meal_path(meal) %><h2>
                   <%# <h4><%= meal.user.nickname<h4> %>
                   <p><%= meal.description %></p>
                 </div>
