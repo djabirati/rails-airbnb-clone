@@ -30,6 +30,17 @@ class MealsController < ApplicationController
     end
   end
 
+  def show
+    @meal = Meal.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @meal.update(meal_params)
+  end
+
   private
 
   def meal_params
