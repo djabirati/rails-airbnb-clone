@@ -1,22 +1,25 @@
 
 <div class="">
   <div class="map_cards_container">
-    <div class="cards">
-        <% @meals.each do |meal| %>
-            <div class="card-product">
-              <%= cl_image_tag(meal.photo.key) %>
-              <div class="card-product-infos">
-                <div>
-                  <h2><%= link_to meal.title, meal_path(meal) %><h2>
-                  <p><%= meal.description %></p>
-                </div>
-                <h2 class="card-product-pricing"><%= meal.price %>€</h2>
-                <%= cl_image_tag(meal.user.photo.key, class: 'card-product-user avatar-bordered') %>
+    <div class="cards-index">
+      <% @results.each do |meal|%>
+        <%= link_to meal_path(meal) do%>
+          <div class="card-trip">
+            <img src="<%= cl_image_path(meal.photo.key) %>" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= meal.title %></h2>
+                <p><%= meal.description %></p>
               </div>
+              <h2 class="card-trip-pricing"><%= meal.price%>€</h2>
+              <img src="<%= cl_image_path(meal.user.photo.key) %>" class="card-trip-user avatar-bordered" />
             </div>
-          <%# <% end %>
-        <% end %>
+          </div>
+        <%end%>
+      <% end %>
     </div>
+
+
 
     <div class="" id="map"
           style=" height: 600px;"
@@ -24,17 +27,3 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
-
-<style>
-  .map_cards_container {
-    display: flex;
-  }
-
-  #map {
-    width: 33vw;
- }
-
- .cards {
-   width: 67vw;
- }
-</style>

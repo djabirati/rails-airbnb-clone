@@ -1,12 +1,14 @@
 <div class="navbar erase-bootstrap navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "" %>
+
+    <%= image_tag "https://images.unsplash.com/31/RpgvvtYAQeqAIs1knERU_vegetables.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGNoZWYlMjBjb29raW5nfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60" %>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+  <%= simple_form_for :search, url: meals_path , method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :city, input_html: {value: ""} %>
+    <%= f.input :type, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -26,6 +28,7 @@
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
+
         <li class="nav-item">
           <%= link_to "Become a chef", "#", class: "nav-link" %>
         </li>

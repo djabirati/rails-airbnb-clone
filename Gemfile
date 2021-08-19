@@ -72,3 +72,6 @@ gem 'cloudinary', '~> 1.16.0'
 
 # For Map
 gem 'geocoder'
+
+# For Search
+gem "algoliasearch-rails"
