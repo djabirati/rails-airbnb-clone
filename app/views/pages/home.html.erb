@@ -1,7 +1,24 @@
 
 <div class="container">
   <h1>Welcome to Meal</h1>
-  <p>Find a chef near your place</p>>
+  <p>Find a chef near your place</p>
+</div>
+
+
+<div class="row">
+    <div class="cards">
+      <% @meals.sample(3).each do |meal| %>
+        <%= link_to meal_path(meal) do%>
+          <div class="card-description">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, -2, -1.5)), url('<%= cl_image_path meal.photo.key, height: 300, width: 400, crop: :fill %>')">
+              <%=meal.title%>
+            </div>
+            <p><%= meal.description%></p>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+</div>
 
 
 </div>

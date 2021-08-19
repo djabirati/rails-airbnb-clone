@@ -7,8 +7,10 @@
   padding: 100px 0;
 }
 
-a.nav-link {
-  color: white;
+
+.navbar-light .navbar-nav .nav-link {
+    color: white!important;
+
 }
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -21,4 +23,14 @@ a.nav-link {
 .erase-bootstrap {
   flex-wrap: nowrap;
   justify-content: space-between!important;
+
+}
+
+#navbarDropdown {
+  margin-right: 30px;
+}
+
+.nav-link {
+  margin-right: 14px;
+
 }
