@@ -3,40 +3,5 @@
   <h1>Welcome to Meal</h1>
   <p>Find a chef near your place</p>>
 
- <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000000">
-      <%= cl_image_tag(@meals[0].photo.key, height: 300, width: 400, crop: :fill) %>
-      <div class="carousel-caption d-none d-md-block">
-        <h5><%=@meals[0].title%></h5>
-        <p><%=@meals[0].description%></p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="20000000">
-      <%= cl_image_tag(@meals[1].photo.key, height: 300, width: 400, crop: :fill) %>
-      <div class="carousel-caption d-none d-md-block">
-        <h5><%=@meals[1].title%></h5>
-        <p><%=@meals[1].description%></p>
-      </div>
-    </div>
-    <%# <div class="carousel-item">
-      <%= cl_image_tag(@meals[2].photo.key) %>
-      <%# <div class="carousel-caption d-none d-md-block">
-        <h5><%=@meals[2].title%></h5>
-        <%# <p><%=@meals[2].description%></p>
-      <%# </div>
-    </div> %> %> %> %>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+
 </div>

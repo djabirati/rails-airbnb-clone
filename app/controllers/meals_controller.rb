@@ -1,18 +1,14 @@
 class MealsController < ApplicationController
-
   def index
     @meals = Meal.all
-
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    unless @meals == []
-      @markers = @meals.geocoded.map do |meal|
-      {
-        lat: meal.latitude,
-        lng: meal.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { meal: meal })
-      }
-      end
+    @results = @meals
+    @search = params["search"]
+    if @search.present?
+      @city = @search["city"]
+      @type = @search["type"]
+      @results = recherche(@city, @type)
     end
+    @markers = mark(@results)
   end
 
   def new
@@ -45,5 +41,30 @@ class MealsController < ApplicationController
 
   def meal_params
     params.require(:meal).permit(:title, :category, :description, :price, :photo)
+  end
+
+  def mark(meals)
+    markers = meals.map do |meal|
+      {
+        lat: meal.latitude,
+        lng: meal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { meal: meal })
+      }
+    end
+    return markers
+  end
+
+  def recherche(city, type)
+    results = []
+    types = Meal.search(type)
+    citys = Meal.near(city, 10)
+    if city != "" && type != ""
+      types.map { |meal| results << meal if citys.include?(meal) }
+    elsif city == ""
+      results = types
+    else
+      results = citys
+    end
+    return results
   end
 end

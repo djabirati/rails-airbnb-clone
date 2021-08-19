@@ -1,8 +1,15 @@
+.cards-index {
+  margin-top: 25px;
+  width: 67vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .card-trip {
-  overflow: hidden;
+  height: auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 300px;
 }
 
 .card-trip > img {
@@ -16,6 +23,11 @@
   font-weight: bold;
   margin: 0;
 }
+.cards a {
+  text-decoration: none!important;
+  color: black!important;
+}
+
 
 .card-trip p {
   font-size: 12px;
@@ -30,7 +42,6 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-
 }
 
 .card-trip-infos .card-trip-user {
@@ -38,4 +49,40 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
