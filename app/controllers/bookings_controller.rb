@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.meal_id = @meal.id
     if @booking.save
-      redirect_to meals_path(@meal)
+      redirect_to dashboard_path(current_user)
     else
       render :new
     end
