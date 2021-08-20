@@ -75,3 +75,4 @@ gem 'geocoder'
 
 # For Search
 gem "algoliasearch-rails"
+gem 'pg_search', '~> 2.3.0'

@@ -17,7 +17,6 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    Meal.reindex
     @meal.user_id = current_user.id
     @meal.address = current_user.address
     if @meal.save
@@ -60,7 +59,7 @@ class MealsController < ApplicationController
 
   def recherche(city, type)
     results = []
-    types = Meal.search(type)
+    types = Meal.search_by_category(type)
     citys = Meal.near(city, 10)
     if city != "" && type != ""
       types.map { |meal| results << meal if citys.include?(meal) }
