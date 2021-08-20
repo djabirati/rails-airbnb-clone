@@ -1,7 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    # @user = current_user.id
-    @user = User.find(params[:id])
+    @user = current_user
     @meals = Meal.all
     @bookings = Booking.all
   end

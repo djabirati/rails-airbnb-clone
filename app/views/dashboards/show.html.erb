@@ -3,14 +3,16 @@
 <div class="grid">
   <h2>Welcome back, <%= @user.nickname %></h2>
   <br>
-  <div class="dashavatar">
-    <%= cl_image_tag(@user.photo.key, :class=>'avatar-large') %>
-  </div>
 </div>
 
 
+<div class="flex-container">
+
+  <div class="flex-child magenta">
 <div class="gridbooking">
+  <h2>Cheff's Bookings</h2>
   <% @bookings.reject{|booking| booking.user_id  !=  @user.id}.each do |booking| %>
+  <% if booking.meal.user == current_user %>
     <div class="notification">
       <div class="notification-content">
         <p><small><%= booking.date_hour %></small></p>
@@ -23,8 +25,32 @@
         <a href="#">Delete <i class="far fa-trash-alt"></i></a>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
+  </div>
+
+  <div class="flex-child green">
+<div class="gridbooking">
+  <h2>My Bookings</h2>
+  <% @bookings.reject{|booking| booking.user_id  !=  @user.id}.each do |booking| %>
+  <% if booking.user == current_user %>
+    <div class="notification">
+      <div class="notification-content">
+        <p><small><%= booking.date_hour %></small></p>
+        <p><%= booking.status %></p>
+        <p><%= booking.number_customer %> customer for <%= booking.total_price %> €</p>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+  </div>
+
+</div>
+
+
+
 
 <div class="cards-index">
   <% @meals.reject{|meal| meal.user_id  !=  @user.id}.each do |meal| %>

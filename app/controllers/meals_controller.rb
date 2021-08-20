@@ -38,8 +38,7 @@ class MealsController < ApplicationController
   def update
     @meal = Meal.find(params[:id])
     @meal.update(meal_params)
-    redirect_to meals_path
-    # redirect_to dashboard: id: current_user.id
+    redirect_to dashboard_path(current_user)
   end
 
   private
