@@ -1,0 +1,46 @@
+<div class="container">
+
+<div class="grid">
+  <h2>Welcome back, <%= @user.nickname %></h2>
+  <br>
+  <div class="dashavatar">
+    <%= cl_image_tag(@user.photo.key, :class=>'avatar-large') %>
+  </div>
+</div>
+
+
+<div class="gridbooking">
+  <% @bookings.reject{|booking| booking.user_id  !=  @user.id}.each do |booking| %>
+    <div class="notification">
+      <div class="notification-content">
+        <p><small><%= booking.date_hour %></small></p>
+        <p><%= booking.status %></p>
+        <p><%= booking.number_customer %> customer for <%= booking.total_price %> €</p>
+      </div>
+
+      <div class="notification-actions">
+        <a href="#">Confirm <i class="fas fa-pencil-alt"></i></a>
+        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="cards-index">
+  <% @meals.reject{|meal| meal.user_id  !=  @user.id}.each do |meal| %>
+    <div class="card-trip">
+      <%= cl_image_tag(meal.photo.key) %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= meal.title %></h2>
+          <p><%= meal.description %></p>
+          <%= link_to "Update", controller: "meals", action: "edit", id: meal.id %>
+        </div>
+        <h2 class="card-trip-pricing"><%= meal.price %> €</h2>
+        <%= cl_image_tag(meal.user.photo.key, :class=>'card-trip-user avatar-bordered') %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</div>
