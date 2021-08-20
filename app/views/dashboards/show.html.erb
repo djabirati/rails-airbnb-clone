@@ -33,7 +33,7 @@
   <div class="flex-child green">
 <div class="gridbooking">
   <h2>My Bookings</h2>
-  <% @bookings.reject{|booking| booking.user_id  !=  @user.id}.each do |booking| %>
+  <% @bookings.each do |booking| %>
   <% if booking.user == current_user %>
     <div class="notification">
       <div class="notification-content">
