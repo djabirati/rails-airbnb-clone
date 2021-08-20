@@ -1,0 +1,10 @@
+<div>
+  <p><strong><%= @meal.title %></strong></p>
+  <p><%= @meal.description %></p>
+  <%= cl_image_tag @meal.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="container">
+        <div >
+          <p><strong>Menu price</strong></p>
+          <p><strong>€<%= @meal.price %></strong></p>
+  </div>
+</div>

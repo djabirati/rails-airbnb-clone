@@ -1,30 +1,29 @@
 
-<div class="container">
-  <div class="row">
-    <div class="cards col-10">
-      <div class="cards">
-        <% @meals.each do |meal| %>
-          <%# <%= link_to meal_path(meal.id) do %>
-            <div class="card-product">
-              <%= cl_image_tag(meal.photo.key) %>
-              <div class="card-product-infos">
-                <div>
-                  <h2><%= meal.title %><h2>
-                  <%# <h4><%= meal.user.nickname<h4> %>
-                  <p><%= meal.description %></p>
-                </div>
-                <h2 class="card-product-pricing">£99.99</h2>
-                <%= cl_image_tag(meal.user.photo.key, class: 'card-product-user avatar-bordered') %>
+<div class="">
+  <div class="map_cards_container">
+    <div class="cards-index">
+      <% @results.each do |meal|%>
+        <%= link_to meal_path(meal) do%>
+          <div class="card-trip">
+            <img src="<%= cl_image_path(meal.photo.key) %>" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= meal.title %></h2>
+                <p><%= meal.description %></p>
               </div>
+              <h2 class="card-trip-pricing"><%= meal.price%>€</h2>
+              <img src="<%= cl_image_path(meal.user.photo.key) %>" class="card-trip-user avatar-bordered" />
             </div>
-          <%# <% end %>
-        <% end %>
-      </div>
+          </div>
+        <%end%>
+      <% end %>
     </div>
 
-    <div class="col-2">
 
 
-    </div>
+    <div class="" id="map"
+          style=" height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>

@@ -1,9 +1,17 @@
+.cards-index {
+  margin-top: 25px;
+  margin-left: 15px;
+  width: 67vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+
+}
+
 .card-trip {
-  overflow: hidden;
+  height: auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
-  margin: 20px;
 }
 
 .card-trip > img {
@@ -31,84 +39,77 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-
+  color: black;
 }
 
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 36px;
 }
 
-.meal-card {
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
   display: flex;
-  justify-content: space-between;
-}
-
-
-
-
-
-.grid {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row | row-reverse | column | column-reverse;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.gridbooking {
-  display: grid | inline-grid;
-  justify-content: space-between;
-  flex-direction: row | row-reverse | column | column-reverse;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.dashavatar {
-  margin: 10px 0px;
-}
-
-.notification {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
-  background: white;
-  padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
-}
-
-.notification .notification-content {
-  flex-grow: 1;
-  padding: 0 24px;
-}
-
-.notification p {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.notification small {
-  color: #999999;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
-}
-.notification .notification-actions {
-  opacity: 0;
-  display: flex;
-  transition: ease .3s;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.notification:hover .notification-actions {
-  opacity: 1;
+.card-description {
+  height: 300px;
+  color: black;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
-.notification .notification-actions a {
-  color: #999999;
-  margin-left: 16px;
-  font-size: 14px;
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
-.notification .notification-actions a:hover {
-  color: #555555;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

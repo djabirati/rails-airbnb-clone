@@ -64,5 +64,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # For Sign In
 gem 'devise'
 
+
+# For image
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+
+
+# For Map
+gem 'geocoder'
+
+# For Search
+gem "algoliasearch-rails"

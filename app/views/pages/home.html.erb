@@ -2,20 +2,24 @@
 <div class="container">
   <h1>Welcome to Meal</h1>
   <p>Find a chef near your place</p>
+</div>
 
-   <div class="grid">
-      <% @meals.each do |meal| %>
-        <div class="card-trip">
-          <%= cl_image_tag(meal.photo.key) %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= meal.title %></h2>
-              <p><%= meal.description %></p>
+
+<div class="row">
+    <div class="cards">
+      <% @meals.sample(3).each do |meal| %>
+        <%= link_to meal_path(meal) do%>
+          <div class="card-description">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, -2, -1.5)), url('<%= cl_image_path meal.photo.key, height: 300, width: 400, crop: :fill %>')">
+              <%=meal.title%>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
-            <%= cl_image_tag(meal.user.photo.key, :class=>'card-trip-user avatar-bordered') %>
+            <p><%= meal.description%></p>
           </div>
-        </div>
-      <% end %>
-  </div>
+        <%end%>
+      <%end%>
+    </div>
+</div>
+
+
+>>>>>>> master
 </div>
