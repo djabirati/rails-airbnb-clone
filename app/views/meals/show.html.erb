@@ -10,7 +10,7 @@
         <h5 class="card-title"><%= @meal.title %></h5>
         <p class="card-text"><%= @meal.description %></p>
         <p class="card-text">€<%= @meal.price %></p>
-        <%= link_to "Booking", new_meal_booking_path(current_user), class: "btn btn-primary" %>
+        <%= link_to "Booking", new_meal_booking_path(@meal), class: "btn btn-primary" %>
       </div>
     </div>
   </div>
