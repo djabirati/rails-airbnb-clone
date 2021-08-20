@@ -2,7 +2,7 @@ class Meal < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :title, :category, :description
+    attributes :category
   end
 
   belongs_to :user

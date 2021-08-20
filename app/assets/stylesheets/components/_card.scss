@@ -1,9 +1,11 @@
 .cards-index {
   margin-top: 25px;
+  margin-left: 15px;
   width: 67vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+
 }
 
 .card-trip {
@@ -23,11 +25,6 @@
   font-weight: bold;
   margin: 0;
 }
-.cards a {
-  text-decoration: none!important;
-  color: black!important;
-}
-
 
 .card-trip p {
   font-size: 12px;
@@ -42,6 +39,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  color: black;
 }
 
 .card-trip-infos .card-trip-user {

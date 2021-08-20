@@ -17,6 +17,7 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
+    Meal.reindex
     @meal.user_id = current_user.id
     @meal.address = current_user.address
     if @meal.save
