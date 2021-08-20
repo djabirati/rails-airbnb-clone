@@ -4,17 +4,16 @@
     <title>RailsAirbnbClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
     </a>
     <nav class="navbar navbar-light ">
       <form class="form-inline">
@@ -43,6 +42,7 @@
       </div>
   </div>
     <%= yield %>
+  <%#
   <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -50,5 +50,6 @@
     <a href="#"><i class="fab fa-twitter"></i></a>
   </div>
   </div>
+  %>
   </body>
 </html>

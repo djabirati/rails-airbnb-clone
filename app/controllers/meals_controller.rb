@@ -17,6 +17,17 @@ class MealsController < ApplicationController
     end
   end
 
+  def edit
+    @meal = Meal.find(params[:id])
+  end
+
+  def update
+    @meal = Meal.find(params[:id])
+    @meal.update(meal_params)
+    redirect_to meals_path
+    # redirect_to dashboard: id: current_user.id
+  end
+
   private
 
   def meal_params
